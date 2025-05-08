@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Thu May  8 16:30:22 2025
+# Process ID         : 76370
+# Current directory  : /home/danny/Documents/fpga_club/Danny/board_io_check/board_io_check.runs/synth_1
+# Command line       : vivado -log top_boardIO.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_boardIO.tcl
+# Log file           : /home/danny/Documents/fpga_club/Danny/board_io_check/board_io_check.runs/synth_1/top_boardIO.vds
+# Journal file       : /home/danny/Documents/fpga_club/Danny/board_io_check/board_io_check.runs/synth_1/vivado.jou
+# Running On         : desktop
+# Platform           : Debian
+# Operating System   : Debian GNU/Linux 12 (bookworm)
+# Processor Detail   : AMD Ryzen 5 1600X Six-Core Processor
+# CPU Frequency      : 3608.480 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 16683 MB
+# Swap memory        : 1023 MB
+# Total Virtual      : 17707 MB
+# Available Virtual  : 12091 MB
+#-----------------------------------------------------------
+source top_boardIO.tcl -notrace

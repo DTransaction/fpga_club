@@ -1,0 +1,101 @@
+#include "xparameters.h"
+#include "xil_types.h"
+#include "xtmrctr.h"
+#include "xil_io.h"
+#include "xil_exception.h"
+#include "xscugic.h"
+#include "xgpio.h"
+#include <stdio.h>
+
+#define CHANNEL 1
+#define LEDS_DEVICE_ID XPAR_GPIO_0_DEVICE_ID      // GPIO for LEDs
+
+u8 timer_flag;
+
+// Timer Interrupt Service Routine
+void Timer_InterruptHandler(void *CallbackRef) {
+	timer_flag = 1;
+	XTmrCtr_Reset((XTmrCtr*)CallbackRef, 0);
+}
+
+// Initialize Interrupt System
+int SetupInterruptSystem(XScuGic *gic_ptr, XTmrCtr *TimerInstancePtr) {
+    int status;
+    XScuGic_Config *gic_config;
+
+    // Lookup config
+    gic_config = XScuGic_LookupConfig(XPAR_SCUGIC_0_DEVICE_ID);
+    if (gic_config == NULL) return XST_FAILURE;
+
+    // Apply config to GIC instance
+    status = XScuGic_CfgInitialize(gic_ptr, gic_config, gic_config->CpuBaseAddress);
+    if (status != XST_SUCCESS) return XST_FAILURE;
+
+    // Connect GIC to interrupt handler
+    status = XScuGic_Connect(gic_ptr, XPAR_FABRIC_AXI_TIMER_0_INTERRUPT_INTR,
+                             (Xil_ExceptionHandler)Timer_InterruptHandler, (void *)TimerInstancePtr);
+    if (status != XST_SUCCESS) return XST_FAILURE;
+
+    // Enable timer interrupt in GIC
+    XScuGic_Enable(gic_ptr, XPAR_FABRIC_AXI_TIMER_0_INTERRUPT_INTR);
+
+    Xil_ExceptionInit();
+    Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
+                                 (Xil_ExceptionHandler)XScuGic_InterruptHandler,
+                                 gic_ptr);
+    Xil_ExceptionEnable();
+
+    return XST_SUCCESS;
+}
+
+int main() {
+	XGpio led_gpio;
+	XTmrCtr timer0;
+	u32 * timer_ptr = (u32 *)XPAR_TMRCTR_0_BASEADDR;
+	XScuGic gic;
+	u8 led_state = 0x0F;
+    int status;
+
+    // Initialize GPIO for LEDs
+    status = XGpio_Initialize(&led_gpio, LEDS_DEVICE_ID);
+    if (status != XST_SUCCESS) {
+    	xil_printf("LED GPIO initialization failure\r\n");
+    	return XST_FAILURE;
+    }
+
+    // Set GPIO directions for LEDs
+    XGpio_SetDataDirection(&led_gpio, CHANNEL, 0x0);
+
+    // Initialize interrupt system
+    status = SetupInterruptSystem(&gic, &timer0);
+    if (status != XST_SUCCESS) {
+        xil_printf("Interrupt setup failed\n");
+        return XST_FAILURE;
+    }
+
+    // Initialize timer
+    status = XTmrCtr_Initialize(&timer0, XPAR_TMRCTR_0_DEVICE_ID);
+    if (status != XST_SUCCESS) {
+        xil_printf("Timer initialization failed\n");
+        return XST_FAILURE;
+    }
+
+    // Configure timer
+    XTmrCtr_SetHandler(&timer0, (XTmrCtr_Handler)Timer_InterruptHandler, &timer0);
+    *(timer_ptr + 1) = 149999998; // 3 seconds
+    *timer_ptr = 0xD6;
+
+    xil_printf("Program started\n");
+
+    while (1) {
+    	// Check for button interrupt flag
+    	if (timer_flag) {
+    		timer_flag = 0; // Reset flag
+    		xil_printf("Inverting LED\n");
+        	XGpio_DiscreteWrite(&led_gpio, CHANNEL, led_state);
+        	led_state = ~led_state;
+    	}
+    }
+
+    return 0;
+}

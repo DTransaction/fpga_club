@@ -1,19 +1,93 @@
-#include <stdio.h>
+/*
+ * Written by Danny Tran (101236303)
+ * June 11, 2025
+ */
 
+#include <stdio.h>
 #include "morse_code.h"
 #include "system.h"
 
-u8 characters[36][5] = {{1, 2},          {2, 1, 1, 1},    {2, 1, 2, 1},    {2, 1, 1},       {1},
-                        {1, 1, 2, 1},    {2, 2, 1},       {1, 1, 1, 1},    {1, 1},          {1, 2, 2, 2},
-                        {2, 1, 2},       {1, 2, 1, 1},    {2, 2},          {2, 1},          {2, 2, 2},
-                        {1, 2, 2, 1},    {2, 2, 1, 2},    {1, 2, 1},       {1, 1, 1},       {2},
-                        {1, 1, 2},       {1, 1, 1, 2},    {1, 2, 2},       {2, 1, 1, 2},    {2, 1, 2, 2},
-                        {2, 2, 1, 1},    {2, 2, 2, 2, 2}, {1, 2, 2, 2, 2}, {1, 1, 2, 2, 2}, {1, 1, 1, 2, 2},
-                        {1, 1, 1, 1, 2}, {1, 1, 1, 1, 1}, {2, 1, 1, 1, 1}, {2, 2, 1, 1, 1}, {2, 2, 2, 1, 1},
-                        {2, 2, 2, 2, 1}};
-double dot_avg;
+/****************		MACROS			****************/
+// Number of characters available (a-z, 0-9)
+#define MAX_NUM_CHARS 36
 
-// Calibration
+// UTF-8 codes for characters
+#define UTF8_UPPER_A 65
+#define UTF8_UPPER_Z 90
+#define UTF8_LOWER_A 97
+#define UTF8_LOWER_Z 122
+#define UTF8_0 48
+#define UTF8_9 57
+#define UTF8_SPACE 32
+
+typedef enum {
+    DOT = 1,
+    DASH = 2,
+    END_OF_SYMBOL,
+    END_OF_CHAR,
+    END_OF_WORD
+} MorseSymbol;
+
+
+
+/****************		VARIABLES		****************/
+static double morse_unit;
+// a-z, 0-9 mapping of Morse code symbols
+static u8 all_chars[MAX_NUM_CHARS][MAX_SYMBOLS_PER_CHAR] = {
+	{1, 2},          {2, 1, 1, 1},    {2, 1, 2, 1},    {2, 1, 1},       {1},
+	{1, 1, 2, 1},    {2, 2, 1},       {1, 1, 1, 1},    {1, 1},          {1, 2, 2, 2},
+	{2, 1, 2},       {1, 2, 1, 1},    {2, 2},          {2, 1},          {2, 2, 2},
+	{1, 2, 2, 1},    {2, 2, 1, 2},    {1, 2, 1},       {1, 1, 1},       {2},
+	{1, 1, 2},       {1, 1, 1, 2},    {1, 2, 2},       {2, 1, 1, 2},    {2, 1, 2, 2},
+	{2, 2, 1, 1},    {2, 2, 2, 2, 2}, {1, 2, 2, 2, 2}, {1, 1, 2, 2, 2}, {1, 1, 1, 2, 2},
+	{1, 1, 1, 1, 2}, {1, 1, 1, 1, 1}, {2, 1, 1, 1, 1}, {2, 2, 1, 1, 1}, {2, 2, 2, 1, 1},
+	{2, 2, 2, 2, 1}
+};
+
+
+
+/****************		FUNCTIONS		****************/
+/*
+ * @brief Checks equality of two same sized u8 arrays
+ * @param arr_1[] Array 1
+ * @param arr_2[] Array 2
+ * @param length Length of both arrays
+ */
+static u8 arr_eq(u8 arr_1[], u8 arr_2[], size_t length) {
+    for (size_t i = 0; i < length; ++i) {
+        if (arr_1[i] != arr_2[i]) return 0;
+    }
+    return 1;
+}
+
+/*
+ * @brief Generates a random string
+ * @param buffer Writes random string to buffer
+ * @param length Length of string to be generated
+ *
+ * Uses timer0 as a RNG
+ */
+void generate_random_string(char* buffer, size_t length) {
+    if (length < 1) return;
+
+    const char charset[] = "abcdefghijklmnopqrstuvwxyz0123456789";
+    size_t charset_size = sizeof(charset) - 1;
+
+    for (size_t i = 0; i < length; i++) {
+        u32 timer0_value = *(timer0_ptr+2);
+        int key = timer0_value % charset_size;
+        buffer[i] = charset[key];
+    }
+
+    buffer[length] = '\0';  // Null-terminate the string
+}
+
+/**
+ * @brief Calibrates the Morse timing unit based on user input.
+ *
+ * The user must press the button three times to represent three Morse code dots.
+ * The average press duration is stored as the base timing unit for dots and other symbols.
+ */
 void calibrate() {
     double press_time;
     u8 calibration_count = 0;
@@ -21,45 +95,48 @@ void calibrate() {
 
     xil_printf("To calibrate, do 3 dots.\n");
     while (calibration_count < 3) {
-    	if (btn_flag) {
+    	if (g_button_flag) {
     		usleep(40000);
-    		btn_flag = 0;
-    		btn_pressed = XGpio_DiscreteRead(&btn_gpio, CHANNEL);
+    		g_button_flag = 0;
+    		g_button_pressed = XGpio_DiscreteRead(&btn_gpio, CHANNEL);
     	} else continue;
 
         // Button pressed, begin press timer
-        if (btn_pressed) {
+        if (g_button_pressed) {
             XTmrCtr_Start(&timer0, 0);
         }
 
         // Button released
-        else if (!btn_pressed) {
+        else if (!g_button_pressed) {
             XTmrCtr_Stop(&timer0, 0);
             timer_value = XTmrCtr_GetValue(&timer0, 0);
             press_time = (double)timer_value / (double)XPAR_AXI_TIMER_0_CLOCK_FREQ_HZ;
 
             printf("Press time: %.2f\n", press_time);
-            dot_avg += press_time;
+            morse_unit += press_time;
             ++calibration_count;
         }
     }
-    dot_avg /= calibration_count;
-    // Set release time for word gaps
-    *(timer1_ptr + 1) = dot_avg * 15 * XPAR_AXI_TIMER_1_CLOCK_FREQ_HZ;
-    printf("Dot average: %.2f\n", dot_avg);
+    morse_unit /= calibration_count;
+    // Set release time for character gaps
+    *(timer1_ptr + 1) = morse_unit * 6 * XPAR_AXI_TIMER_1_CLOCK_FREQ_HZ;
+    printf("Morse dot average: %.2f\n", morse_unit);
 }
 
-u8 arr_eq(u8 arr_1[], u8 arr_2[], size_t length) {
-    for (size_t i = 0; i < length; ++i) {
-        if (arr_1[i] != arr_2[i]) return 0;
-    }
-    return 1;
-}
-
-// Given a string, blinks it in Morse code
+/*
+ * @brief Blinks a given word in Morse
+ * @param str[] Word to be blinked
+ * @param display_chars If 1, characters are printed as they are blinked
+ *
+ * Switches control how fast blinks are.
+ * 	SW3 - 8x faster
+ * 	SW2 - 4x faster
+ * 	SW1 - 2x faster
+ * 	SW0 - 1x faster
+ */
 void word_to_morse(const char str[], u8 display_chars) {
     // Used to convert UTF-8 character hex code to an index value
-    // to find Morse code equivalent in 2-D array `characters`
+    // to find Morse code equivalent in 2-D array `all_chars`
     u8 decrement;
     // Speeds up the transmission based off of the switch
     // configuration in binary
@@ -90,16 +167,17 @@ void word_to_morse(const char str[], u8 display_chars) {
         if (display_chars) xil_printf("%c", str[char_i]);
 
         // Iterate through Morse code symbols of a character
-        for (u8 symbol_i = 0; symbol_i < 5; ++symbol_i) {
+        for (u8 symbol_i = 0; symbol_i < MAX_SYMBOLS_PER_CHAR; ++symbol_i) {
+        	if (g_button_flag) return;
             // Skip filler symbols
-            if (characters[str[char_i] - decrement][symbol_i] == 0) continue;
+            if (all_chars[str[char_i] - decrement][symbol_i] == 0) continue;
 
             XGpio_DiscreteWrite(&led_gpio, CHANNEL, 0x0F);
 
             // Determines if dot or dash
-            if (characters[str[char_i] - decrement][symbol_i] == DOT) {
+            if (all_chars[str[char_i] - decrement][symbol_i] == DOT) {
                 usleep(1000000 / speed_factor);  // Dot length
-            } else if (characters[str[char_i] - decrement][symbol_i] == DASH) {
+            } else if (all_chars[str[char_i] - decrement][symbol_i] == DASH) {
                 usleep(3000000 / speed_factor);  // Dash length
             }
 
@@ -112,59 +190,54 @@ void word_to_morse(const char str[], u8 display_chars) {
     xil_printf("\n");
 }
 
-void morse_to_word(char* translated_word, u8 word_chars[100][5], u8 word_size) {
-    // Loop through "morsed" word
+/*
+ * @brief Decodes Morse message to string
+ * @param translated_word Decoded message written here
+ * @param morse_input User's Morse input
+ * @param word_size Character length of user's Morse input
+ */
+void morse_to_word(char* translated_word, u8 morse_input[100][MAX_SYMBOLS_PER_CHAR], u8 word_size) {
+	u8 char_found = 0;
+    // Loop through "Morsed" word
     for (u8 char_i = 0; char_i <= word_size; ++char_i) {
-        // Check morsed char against all characters
-        for (u8 all_char_i = 0; all_char_i < 36; ++all_char_i) {
-            // Compare current pattern of symbols against all valid morse characters
-            if (!arr_eq(word_chars[char_i], characters[all_char_i], 5)) continue;
-
+        // Check Morsed char against all characters
+        for (u8 all_char_i = 0; all_char_i < MAX_NUM_CHARS; ++all_char_i) {
+            // Compare current pattern of symbols against all valid Morse characters
+            if (!arr_eq(morse_input[char_i], all_chars[all_char_i], MAX_SYMBOLS_PER_CHAR)) continue;
             // If letter
-            if (all_char_i < 26) {
-                translated_word[char_i] = all_char_i + UTF8_LOWER_A;
-            }
+            if (all_char_i < 26) translated_word[char_i] = all_char_i + UTF8_LOWER_A;
             // If number
-            else if (all_char_i < 36) {
-                translated_word[char_i] = all_char_i + 0x16;
-            }
-            // If does not exist
-            else
-                translated_word[char_i] = '?';
+            else if (all_char_i < MAX_NUM_CHARS) translated_word[char_i] = all_char_i + 0x16;
+            char_found = 1;
             break;
         }
+        // If pattern doesn't exist
+		if (!char_found) translated_word[char_i] = '?';
+        char_found = 0;
     }
     translated_word[word_size + 1] = '\0';
 }
 
-u8 morse_press() {
-    u32 timer_value = *(timer0_ptr+2);
-//    u32 timer_value = XTmrCtr_GetValue(&timer0, 0);  // Get released time
+/*
+ * @brief Configures timers upon button press
+ */
+void morse_press(void) {
     XTmrCtr_Start(&timer0, 0);                       // Start press timer
     *timer1_ptr |= BIT5;                             // Stop release timer
-                                                     //	XTmrCtr_Stop(&timer1, 1); // Stop release timer
-    double release_time = (double)timer_value / (double)XPAR_AXI_TIMER_1_CLOCK_FREQ_HZ;
-
-    // End of symbol
-    if (release_time < dot_avg * 6) {
-        return END_OF_SYMBOL;
-        // End of character
-    } else if (release_time <= dot_avg * 15) {
-        xil_printf(" | ");
-        return END_OF_CHAR;
-        // End of word
-    } else {
-        return END_OF_WORD;
-    }
+    // Set reset value of timer1 to time length of character gap
+    *(timer1_ptr + 1) = morse_unit * 6 * XPAR_AXI_TIMER_1_CLOCK_FREQ_HZ;
 }
 
+/*
+ * @brief Configures timers upon button release and determines if dot or dash
+ */
 u8 morse_release() {
-    u32 timer_value = *(timer0_ptr+2);  			 // Get pressed time
-    XTmrCtr_Start(&timer0, 0);                       // Start release timer
+    XTmrCtr_Stop(&timer0, 0);                        // Stop press timer
     *timer1_ptr &= ~(BIT5);                          // Start release timer
-    double press_time = (double)timer_value / (double)XPAR_AXI_TIMER_0_CLOCK_FREQ_HZ;
+    u32 timer0_value = *(timer0_ptr+2);  			 // Get press time
+    double press_time = (double)timer0_value / (double)XPAR_AXI_TIMER_0_CLOCK_FREQ_HZ;
 
-    if (press_time < dot_avg * 2.5) {
+    if (press_time < morse_unit * 2.5) {
         xil_printf(".");
         return DOT;
     } else {
@@ -173,16 +246,12 @@ u8 morse_release() {
     }
 }
 
-void generate_random_string(char* buffer, size_t length) {
-    const char charset[] = "abcdefghijklmnopqrstuvwxyz0123456789";
-    size_t charset_size = sizeof(charset) - 1;
-
-    if (length < 1) return;
-
-    for (size_t i = 0; i < length; i++) {
-        int key = rand() % charset_size;
-        buffer[i] = charset[key];
-    }
-
-    buffer[length] = '\0';  // Null-terminate the string
+/*
+ * @brief Configures timers when button has been released for a character gap time length
+ */
+void morse_char_gap() {
+    *timer1_ptr |= BIT5; // Reload/stop release timer
+    *(timer1_ptr + 1) = morse_unit * 9 * XPAR_AXI_TIMER_1_CLOCK_FREQ_HZ;
+    *timer1_ptr &= ~(BIT5); // Start release timer
+    xil_printf(" | ");
 }

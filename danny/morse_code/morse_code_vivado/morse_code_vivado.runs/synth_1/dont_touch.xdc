@@ -31,10 +31,7 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_rs
 # IP: bd/design_1/ip/design_1_xlconcat_0_0/design_1_xlconcat_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_xlconcat_0_0 || ORIG_REF_NAME==design_1_xlconcat_0_0} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_axi_timer_1_1/design_1_axi_timer_1_1.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_timer_1_1 || ORIG_REF_NAME==design_1_axi_timer_1_1} -quiet] -quiet
-
-# IP: bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_xadc_wiz_0_0 || ORIG_REF_NAME==design_1_xadc_wiz_0_0} -quiet] -quiet
+# IP: bd/design_1/ip/design_1_axi_timer_1_0/design_1_axi_timer_1_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_timer_1_0 || ORIG_REF_NAME==design_1_axi_timer_1_0} -quiet] -quiet
 
 # XDC: /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/design_1_ooc.xdc

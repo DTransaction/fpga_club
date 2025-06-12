@@ -56,6 +56,8 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 2
+set_param bd.open.in_stealth_mode 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
 
@@ -149,21 +151,13 @@ set_property used_in_implementation false [get_files -all /home/danny/Documents/
 set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_64/bd_afc3_m05awn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_65/bd_afc3_m05wn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_66/bd_afc3_m05bn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_68/bd_afc3_m06s2a_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_69/bd_afc3_m06arn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_70/bd_afc3_m06rn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_71/bd_afc3_m06awn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_72/bd_afc3_m06wn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_73/bd_afc3_m06bn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/smartconnect.xdc]
 set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_board.xdc]
 set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0.xdc]
 set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_timer_1_1/design_1_axi_timer_1_1.xdc]
-set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_timer_1_1/design_1_axi_timer_1_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_timer_1_0/design_1_axi_timer_1_0.xdc]
+set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_timer_1_0/design_1_axi_timer_1_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/design_1_ooc.xdc]
 
 OPTRACE "Adding files" END { }

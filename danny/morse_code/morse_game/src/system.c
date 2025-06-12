@@ -1,3 +1,8 @@
+/*
+ * Written by Danny Tran (101236303)
+ * June 11, 2025
+ */
+
 #include "system.h"
 
 // Global peripherals
@@ -11,11 +16,11 @@ u32 *const timer0_ptr = XPAR_AXI_TIMER_0_BASEADDR;
 u32 *const timer1_ptr = XPAR_AXI_TIMER_1_BASEADDR;
 XScuGic gic;
 XUartPs uart_ps;
-u32 btn_pressed;
+u32 g_button_pressed;
 
 // Flags
-u8 btn_flag;
-u8 timer1_flag;
+u8 g_button_flag;
+u8 g_timer1_flag;
 
 // Initialize GPIO
 void initialize_gpio(XGpio *gpio, u16 id) {
@@ -36,16 +41,16 @@ void initialize_timer(XTmrCtr *timer, u16 id) {
 
 // Button ISR
 void Button_Intr_Handler(void *CallbackRef) {
-    btn_flag = 1;
+    g_button_flag = 1;
 	usleep(30000);
-	btn_pressed = XGpio_DiscreteRead(&btn_gpio, CHANNEL);
-    XGpio_DiscreteWrite(&led_gpio, CHANNEL, btn_pressed);
+	g_button_pressed = XGpio_DiscreteRead(&btn_gpio, CHANNEL);
+    XGpio_DiscreteWrite(&led_gpio, CHANNEL, g_button_pressed);
     XGpio_InterruptClear(&btn_gpio, XGPIO_IR_CH1_MASK);
 }
 
 // Timer 1 Interrupt Service Routine
 void Timer1_Intr_Handler(void *CallbackRef) {
-    timer1_flag = 1;
+    g_timer1_flag = 1;
     *timer1_ptr |= BIT8;  // Clear interrupt
 //	xil_printf("Timer1 interrupt occurred\n");
 }

@@ -1,3 +1,8 @@
+/*
+ * Written by Danny Tran (101236303)
+ * June 11, 2025
+ */
+
 #ifndef SYSTEM_H
 #define SYSTEM_H
 
@@ -7,9 +12,6 @@
 #include "xuartps.h"
 #include "xil_printf.h"
 #include "xparameters.h"
-#include "xil_exception.h"
-
-
 
 // Device IDs
 #define UART_ID        XPAR_XUARTPS_0_DEVICE_ID
@@ -47,11 +49,11 @@ extern u32 *const timer0_ptr;
 extern u32 *const timer1_ptr;
 extern XScuGic gic;
 extern XUartPs uart_ps;
-extern u32 btn_pressed;
+extern u32 g_button_pressed;
 
 // Flags
-extern u8 btn_flag;
-extern u8 timer1_flag;
+extern u8 g_button_flag;
+extern u8 g_timer1_flag;
 
 // Function declarations
 void initialize_gpio(XGpio *gpio, u16 id);

@@ -15,5 +15,5 @@ platform create -name {platform}\
 platform write
 platform generate -domains 
 platform active {platform}
-platform clean
+platform generate
 platform generate

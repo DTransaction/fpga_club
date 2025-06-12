@@ -2,10 +2,10 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-// Date        : Wed Jun  4 10:16:37 2025
+// Date        : Fri Jun  6 10:16:41 2025
 // Host        : T480 running 64-bit Debian GNU/Linux 12 (bookworm)
-// Command     : write_verilog -force -mode synth_stub
-//               /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top design_1_axi_smc_0 -prefix
+//               design_1_axi_smc_0_ design_1_axi_smc_0_stub.v
 // Design      : design_1_axi_smc_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1

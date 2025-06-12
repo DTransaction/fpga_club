@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Wed Jun  4 10:16:45 2025
-# Process ID         : 32458
+# Start of session at: Fri Jun  6 10:29:14 2025
+# Process ID         : 175408
 # Current directory  : /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1
 # Command line       : vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file           : /home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/design_1_wrapper.vds
@@ -13,16 +13,16 @@
 # Platform           : Debian
 # Operating System   : Debian GNU/Linux 12 (bookworm)
 # Processor Detail   : Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz
-# CPU Frequency      : 2727.920 MHz
+# CPU Frequency      : 3377.660 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16503 MB
 # Swap memory        : 8204 MB
 # Total Virtual      : 24707 MB
-# Available Virtual  : 17596 MB
+# Available Virtual  : 15793 MB
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1378.258 ; gain = 0.023 ; free physical = 6000 ; free virtual = 16487
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1378.258 ; gain = 0.023 ; free physical = 2007 ; free virtual = 14715
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2024.2/data/ip'.
@@ -41,77 +41,70 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 32592
+INFO: [Synth 8-7075] Helper process launched with PID 175481
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2052.727 ; gain = 420.797 ; free physical = 5152 ; free virtual = 15646
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2049.758 ; gain = 420.797 ; free physical = 1156 ; free virtual = 13873
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_1_wrapper' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:13]
 INFO: [Synth 8-6157] synthesizing module 'design_1' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:13]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_0_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_axi_gpio_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_0_0' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_axi_gpio_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_1_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_axi_gpio_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_1_0' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_axi_gpio_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_2_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_axi_gpio_2_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_2_0' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_axi_gpio_2_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_3_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_axi_gpio_3_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_3_0' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_axi_gpio_3_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_0' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_axi_smc_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:343]
-WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:343]
-WARNING: [Synth 8-7071] port 'M01_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:343]
-WARNING: [Synth 8-7071] port 'M01_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:343]
-WARNING: [Synth 8-7071] port 'M02_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:343]
-WARNING: [Synth 8-7071] port 'M02_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:343]
-WARNING: [Synth 8-7071] port 'M03_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:343]
-WARNING: [Synth 8-7071] port 'M03_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:343]
-WARNING: [Synth 8-7071] port 'M04_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:343]
-WARNING: [Synth 8-7071] port 'M04_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:343]
-WARNING: [Synth 8-7071] port 'M05_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:343]
-WARNING: [Synth 8-7071] port 'M05_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:343]
-WARNING: [Synth 8-7071] port 'M06_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:343]
-WARNING: [Synth 8-7071] port 'M06_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:343]
-WARNING: [Synth 8-7023] instance 'axi_smc' of module 'design_1_axi_smc_0' has 173 connections declared, but only 159 given [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:343]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_timer_0_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_axi_timer_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_timer_0_0' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_axi_timer_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'generateout0' of module 'design_1_axi_timer_0_0' is unconnected for instance 'axi_timer_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:503]
-WARNING: [Synth 8-7071] port 'generateout1' of module 'design_1_axi_timer_0_0' is unconnected for instance 'axi_timer_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:503]
-WARNING: [Synth 8-7071] port 'pwm0' of module 'design_1_axi_timer_0_0' is unconnected for instance 'axi_timer_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:503]
-WARNING: [Synth 8-7023] instance 'axi_timer_0' of module 'design_1_axi_timer_0_0' has 26 connections declared, but only 23 given [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:503]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_timer_1_1' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_axi_timer_1_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_timer_1_1' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_axi_timer_1_1_stub.v:6]
-WARNING: [Synth 8-7071] port 'generateout0' of module 'design_1_axi_timer_1_1' is unconnected for instance 'axi_timer_1' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:527]
-WARNING: [Synth 8-7071] port 'generateout1' of module 'design_1_axi_timer_1_1' is unconnected for instance 'axi_timer_1' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:527]
-WARNING: [Synth 8-7071] port 'pwm0' of module 'design_1_axi_timer_1_1' is unconnected for instance 'axi_timer_1' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:527]
-WARNING: [Synth 8-7023] instance 'axi_timer_1' of module 'design_1_axi_timer_1_1' has 26 connections declared, but only 23 given [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:527]
-INFO: [Synth 8-6157] synthesizing module 'design_1_processing_system7_0_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_processing_system7_0_0' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_processing_system7_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:551]
-WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:551]
-WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'design_1_processing_system7_0_0' has 66 connections declared, but only 64 given [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:551]
-INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps7_0_50M_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_rst_ps7_0_50M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps7_0_50M_0' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_rst_ps7_0_50M_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_1_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_50M' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:616]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_1_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_50M' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:616]
-WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_1_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_50M' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:616]
-WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'design_1_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_50M' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:616]
-WARNING: [Synth 8-7023] instance 'rst_ps7_0_50M' of module 'design_1_rst_ps7_0_50M_0' has 10 connections declared, but only 6 given [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:616]
-INFO: [Synth 8-6157] synthesizing module 'design_1_xadc_wiz_0_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_xadc_wiz_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_xadc_wiz_0_0' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-32458-T480/realtime/design_1_xadc_wiz_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'ip2intc_irpt' of module 'design_1_xadc_wiz_0_0' is unconnected for instance 'xadc_wiz_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:623]
-WARNING: [Synth 8-7071] port 'channel_out' of module 'design_1_xadc_wiz_0_0' is unconnected for instance 'xadc_wiz_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:623]
-WARNING: [Synth 8-7071] port 'busy_out' of module 'design_1_xadc_wiz_0_0' is unconnected for instance 'xadc_wiz_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:623]
-WARNING: [Synth 8-7071] port 'eoc_out' of module 'design_1_xadc_wiz_0_0' is unconnected for instance 'xadc_wiz_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:623]
-WARNING: [Synth 8-7071] port 'eos_out' of module 'design_1_xadc_wiz_0_0' is unconnected for instance 'xadc_wiz_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:623]
-WARNING: [Synth 8-7071] port 'ot_out' of module 'design_1_xadc_wiz_0_0' is unconnected for instance 'xadc_wiz_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:623]
-WARNING: [Synth 8-7071] port 'vccddro_alarm_out' of module 'design_1_xadc_wiz_0_0' is unconnected for instance 'xadc_wiz_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:623]
-WARNING: [Synth 8-7071] port 'vccpaux_alarm_out' of module 'design_1_xadc_wiz_0_0' is unconnected for instance 'xadc_wiz_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:623]
-WARNING: [Synth 8-7071] port 'vccpint_alarm_out' of module 'design_1_xadc_wiz_0_0' is unconnected for instance 'xadc_wiz_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:623]
-WARNING: [Synth 8-7071] port 'vccaux_alarm_out' of module 'design_1_xadc_wiz_0_0' is unconnected for instance 'xadc_wiz_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:623]
-WARNING: [Synth 8-7071] port 'vccint_alarm_out' of module 'design_1_xadc_wiz_0_0' is unconnected for instance 'xadc_wiz_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:623]
-WARNING: [Synth 8-7071] port 'user_temp_alarm_out' of module 'design_1_xadc_wiz_0_0' is unconnected for instance 'xadc_wiz_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:623]
-WARNING: [Synth 8-7071] port 'alarm_out' of module 'design_1_xadc_wiz_0_0' is unconnected for instance 'xadc_wiz_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:623]
-WARNING: [Synth 8-7023] instance 'xadc_wiz_0' of module 'design_1_xadc_wiz_0_0' has 34 connections declared, but only 21 given [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:623]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_0_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-175408-T480/realtime/design_1_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_0_0' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-175408-T480/realtime/design_1_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_1_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-175408-T480/realtime/design_1_axi_gpio_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_1_0' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-175408-T480/realtime/design_1_axi_gpio_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_2_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-175408-T480/realtime/design_1_axi_gpio_2_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_2_0' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-175408-T480/realtime/design_1_axi_gpio_2_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_3_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-175408-T480/realtime/design_1_axi_gpio_3_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_3_0' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-175408-T480/realtime/design_1_axi_gpio_3_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-175408-T480/realtime/design_1_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_0' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-175408-T480/realtime/design_1_axi_smc_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M01_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M01_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M02_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M02_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M03_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M03_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M04_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M04_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M05_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M05_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M06_AXI_awaddr' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M06_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M06_AXI_awvalid' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M06_AXI_wdata' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M06_AXI_wstrb' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M06_AXI_wvalid' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M06_AXI_bready' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M06_AXI_araddr' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M06_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M06_AXI_arvalid' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7071] port 'M06_AXI_rready' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+WARNING: [Synth 8-7023] instance 'axi_smc' of module 'design_1_axi_smc_0' has 173 connections declared, but only 150 given [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:326]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_timer_0_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-175408-T480/realtime/design_1_axi_timer_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_timer_0_0' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-175408-T480/realtime/design_1_axi_timer_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'generateout0' of module 'design_1_axi_timer_0_0' is unconnected for instance 'axi_timer_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:477]
+WARNING: [Synth 8-7071] port 'generateout1' of module 'design_1_axi_timer_0_0' is unconnected for instance 'axi_timer_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:477]
+WARNING: [Synth 8-7071] port 'pwm0' of module 'design_1_axi_timer_0_0' is unconnected for instance 'axi_timer_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:477]
+WARNING: [Synth 8-7023] instance 'axi_timer_0' of module 'design_1_axi_timer_0_0' has 26 connections declared, but only 23 given [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:477]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_timer_1_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-175408-T480/realtime/design_1_axi_timer_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_timer_1_0' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-175408-T480/realtime/design_1_axi_timer_1_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'generateout0' of module 'design_1_axi_timer_1_0' is unconnected for instance 'axi_timer_1' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:501]
+WARNING: [Synth 8-7071] port 'generateout1' of module 'design_1_axi_timer_1_0' is unconnected for instance 'axi_timer_1' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:501]
+WARNING: [Synth 8-7071] port 'pwm0' of module 'design_1_axi_timer_1_0' is unconnected for instance 'axi_timer_1' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:501]
+WARNING: [Synth 8-7023] instance 'axi_timer_1' of module 'design_1_axi_timer_1_0' has 26 connections declared, but only 23 given [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:501]
+INFO: [Synth 8-6157] synthesizing module 'design_1_processing_system7_0_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-175408-T480/realtime/design_1_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_processing_system7_0_0' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-175408-T480/realtime/design_1_processing_system7_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:525]
+WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:525]
+WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'design_1_processing_system7_0_0' has 66 connections declared, but only 64 given [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:525]
+INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps7_0_50M_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-175408-T480/realtime/design_1_rst_ps7_0_50M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps7_0_50M_0' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/.Xil/Vivado-175408-T480/realtime/design_1_rst_ps7_0_50M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_1_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_50M' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:590]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_1_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_50M' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:590]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_1_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_50M' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:590]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'design_1_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_50M' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:590]
+WARNING: [Synth 8-7023] instance 'rst_ps7_0_50M' of module 'design_1_rst_ps7_0_50M_0' has 10 connections declared, but only 6 given [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/synth/design_1.v:590]
 INFO: [Synth 8-6157] synthesizing module 'design_1_xlconcat_0_0' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/synth/design_1_xlconcat_0_0.v:53]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_6_xlconcat' [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ipshared/6120/hdl/xlconcat_v2_1_vl_rfs.v:59]
 INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_6_xlconcat' (0#1) [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ipshared/6120/hdl/xlconcat_v2_1_vl_rfs.v:59]
@@ -220,18 +213,18 @@ WARNING: [Synth 8-7129] Port In102[0] in module xlconcat_v2_1_6_xlconcat is eith
 WARNING: [Synth 8-7129] Port In103[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2133.695 ; gain = 501.766 ; free physical = 5065 ; free virtual = 15557
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2130.695 ; gain = 501.734 ; free physical = 1077 ; free virtual = 13795
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2145.570 ; gain = 513.641 ; free physical = 5057 ; free virtual = 15549
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2142.570 ; gain = 513.609 ; free physical = 1069 ; free virtual = 13787
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2145.570 ; gain = 513.641 ; free physical = 5057 ; free virtual = 15549
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2142.570 ; gain = 513.609 ; free physical = 1069 ; free virtual = 13787
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2145.570 ; gain = 0.000 ; free physical = 5057 ; free virtual = 15549
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2142.570 ; gain = 0.000 ; free physical = 1069 ; free virtual = 13787
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -252,30 +245,28 @@ Parsing XDC File [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vi
 Finished Parsing XDC File [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0/design_1_axi_smc_0_in_context.xdc] for cell 'design_1_i/axi_smc'
 Parsing XDC File [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_in_context.xdc] for cell 'design_1_i/rst_ps7_0_50M'
 Finished Parsing XDC File [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_in_context.xdc] for cell 'design_1_i/rst_ps7_0_50M'
-Parsing XDC File [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_timer_1_1/design_1_axi_timer_1_1/design_1_axi_timer_0_0_in_context.xdc] for cell 'design_1_i/axi_timer_1'
-Finished Parsing XDC File [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_timer_1_1/design_1_axi_timer_1_1/design_1_axi_timer_0_0_in_context.xdc] for cell 'design_1_i/axi_timer_1'
-Parsing XDC File [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_in_context.xdc] for cell 'design_1_i/xadc_wiz_0'
-Finished Parsing XDC File [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_in_context.xdc] for cell 'design_1_i/xadc_wiz_0'
+Parsing XDC File [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_timer_1_0/design_1_axi_timer_1_0/design_1_axi_timer_0_0_in_context.xdc] for cell 'design_1_i/axi_timer_1'
+Finished Parsing XDC File [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.gen/sources_1/bd/design_1/ip/design_1_axi_timer_1_0/design_1_axi_timer_1_0/design_1_axi_timer_0_0_in_context.xdc] for cell 'design_1_i/axi_timer_1'
 Parsing XDC File [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2194.496 ; gain = 0.000 ; free physical = 5037 ; free virtual = 15525
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2191.496 ; gain = 0.000 ; free physical = 1058 ; free virtual = 13776
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2194.496 ; gain = 0.000 ; free physical = 5037 ; free virtual = 15525
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2191.496 ; gain = 0.000 ; free physical = 1058 ; free virtual = 13776
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2194.496 ; gain = 562.566 ; free physical = 5039 ; free virtual = 15529
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2191.496 ; gain = 562.535 ; free physical = 1049 ; free virtual = 13767
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2202.500 ; gain = 570.570 ; free physical = 5039 ; free virtual = 15529
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2199.500 ; gain = 570.539 ; free physical = 1049 ; free virtual = 13767
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -551,12 +542,11 @@ Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_smc. (constraint f
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/rst_ps7_0_50M. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/xlconcat_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_timer_1. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/xadc_wiz_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2202.500 ; gain = 570.570 ; free physical = 5125 ; free virtual = 15615
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2199.500 ; gain = 570.539 ; free physical = 1049 ; free virtual = 13767
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2202.500 ; gain = 570.570 ; free physical = 5125 ; free virtual = 15616
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2199.500 ; gain = 570.539 ; free physical = 1046 ; free virtual = 13765
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -579,25 +569,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2202.500 ; gain = 570.570 ; free physical = 5122 ; free virtual = 15617
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2199.500 ; gain = 570.539 ; free physical = 1042 ; free virtual = 13766
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 2278.500 ; gain = 646.570 ; free physical = 5077 ; free virtual = 15576
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2274.500 ; gain = 645.539 ; free physical = 956 ; free virtual = 13680
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 2278.500 ; gain = 646.570 ; free physical = 5074 ; free virtual = 15574
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2275.500 ; gain = 646.539 ; free physical = 956 ; free virtual = 13680
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 2289.523 ; gain = 657.594 ; free physical = 5066 ; free virtual = 15566
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2285.516 ; gain = 656.555 ; free physical = 948 ; free virtual = 13672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -615,37 +605,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 2458.336 ; gain = 826.406 ; free physical = 4927 ; free virtual = 15423
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2455.328 ; gain = 826.367 ; free physical = 799 ; free virtual = 13523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 2458.336 ; gain = 826.406 ; free physical = 4927 ; free virtual = 15423
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2455.328 ; gain = 826.367 ; free physical = 799 ; free virtual = 13523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 2458.336 ; gain = 826.406 ; free physical = 4927 ; free virtual = 15423
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2455.328 ; gain = 826.367 ; free physical = 799 ; free virtual = 13523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 2458.336 ; gain = 826.406 ; free physical = 4927 ; free virtual = 15423
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2455.328 ; gain = 826.367 ; free physical = 799 ; free virtual = 13523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 2458.336 ; gain = 826.406 ; free physical = 4927 ; free virtual = 15423
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2455.328 ; gain = 826.367 ; free physical = 799 ; free virtual = 13523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 2458.336 ; gain = 826.406 ; free physical = 4927 ; free virtual = 15423
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2455.328 ; gain = 826.367 ; free physical = 799 ; free virtual = 13523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -661,10 +651,9 @@ Report BlackBoxes:
 |4     |design_1_axi_gpio_3_0           |         1|
 |5     |design_1_axi_smc_0              |         1|
 |6     |design_1_axi_timer_0_0          |         1|
-|7     |design_1_axi_timer_1_1          |         1|
+|7     |design_1_axi_timer_1_0          |         1|
 |8     |design_1_processing_system7_0_0 |         1|
 |9     |design_1_rst_ps7_0_50M_0        |         1|
-|10    |design_1_xadc_wiz_0_0           |         1|
 +------+--------------------------------+----------+
 
 Report Cell Usage: 
@@ -680,32 +669,31 @@ Report Cell Usage:
 |7     |design_1_axi_timer_1          |     1|
 |8     |design_1_processing_system7_0 |     1|
 |9     |design_1_rst_ps7_0_50M        |     1|
-|10    |design_1_xadc_wiz_0           |     1|
-|11    |IBUF                          |     8|
-|12    |OBUF                          |    10|
+|10    |IBUF                          |     8|
+|11    |OBUF                          |    10|
 +------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 2458.336 ; gain = 826.406 ; free physical = 4927 ; free virtual = 15423
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2455.328 ; gain = 826.367 ; free physical = 799 ; free virtual = 13523
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2458.336 ; gain = 777.480 ; free physical = 4927 ; free virtual = 15423
-Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 2458.344 ; gain = 826.406 ; free physical = 4927 ; free virtual = 15423
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2455.328 ; gain = 777.441 ; free physical = 799 ; free virtual = 13523
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2455.336 ; gain = 826.367 ; free physical = 799 ; free virtual = 13523
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2458.344 ; gain = 0.000 ; free physical = 5044 ; free virtual = 15540
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2455.336 ; gain = 0.000 ; free physical = 973 ; free virtual = 13697
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2458.344 ; gain = 0.000 ; free physical = 5111 ; free virtual = 15607
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2455.336 ; gain = 0.000 ; free physical = 971 ; free virtual = 13694
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 8e8d69cb
+Synth Design complete | Checksum: c5f5e7be
 INFO: [Common 17-83] Releasing license: Synthesis
-51 Infos, 146 Warnings, 0 Critical Warnings and 0 Errors encountered.
+49 Infos, 141 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:54 ; elapsed = 00:00:51 . Memory (MB): peak = 2458.344 ; gain = 1062.242 ; free physical = 5111 ; free virtual = 15607
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1891.454; main = 1672.218; forked = 273.870
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3374.051; main = 2458.336; forked = 915.730
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2482.348 ; gain = 0.000 ; free physical = 5111 ; free virtual = 15607
+synth_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:44 . Memory (MB): peak = 2455.336 ; gain = 1058.203 ; free physical = 962 ; free virtual = 13686
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1784.865; main = 1663.135; forked = 268.692
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3261.246; main = 2455.328; forked = 915.730
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2479.340 ; gain = 0.000 ; free physical = 962 ; free virtual = 13685
 INFO: [Common 17-1381] The checkpoint '/home/danny/Documents/fpga_club/danny/morse_code/morse_code_vivado/morse_code_vivado.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Jun  4 10:17:53 2025...
+INFO: [Common 17-206] Exiting Vivado at Fri Jun  6 10:30:12 2025...

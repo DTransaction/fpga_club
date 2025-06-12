@@ -3,6 +3,7 @@
 	<name>morse_game</name>
 	<comment>Created by Vitis v2024.2</comment>
 	<projects>
+		<project>platform</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

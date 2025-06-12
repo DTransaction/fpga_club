@@ -20,3 +20,10 @@ Software | Vitis 2024.2
 Purpose | Have a complete lab 6 example
 Description | Part 1: LEDs controlled by timer. Part 2: LEDs controlled by UART characters.
 Instructions | Open Vitis and select `File` -> `Import` then select the `.zip`. Select part 1 or part 2 from the Explorer, build, and run.
+
+Project | morse_code_game.zip
+--- | ---
+Software | Vitis 2024.2
+Purpose | Practice C programming and using basic IP blocks
+Description | Morse code transmit and receive game built using timers and GPIO.
+Instructions | Open Vitis and select `File` -> `Import` then build and run.
